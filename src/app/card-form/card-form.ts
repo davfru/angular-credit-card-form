@@ -1,9 +1,10 @@
+import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-card-form',
-  imports: [],
+  imports: [ReactiveFormsModule, JsonPipe],
   templateUrl: './card-form.html',
   styleUrl: './card-form.css'
 })
