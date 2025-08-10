@@ -1,17 +1,21 @@
 <form [formGroup]="cardForm">
     <input formControlName="name" />
-    @if (cardForm.controls.name.errors?.['required']) {
-    <div>
-        Values is required.
-    </div>
-    }
 
-    @if (cardForm.controls.name.errors?.['minlength']) {
-    <div>
-        Values must be longer
-    </div>
-    }
+    @if (cardForm.controls.name.touched && 
+        cardForm.controls.name.dirty && 
+        cardForm.controls.name.errors) {
+        @if (cardForm.controls.name.errors['required']) {
+        <div>
+            Values is required.
+        </div>
+        }
 
+        @if (cardForm.controls.name.errors['minlength']) {
+        <div>
+            Values must be longer
+        </div>
+        }
+    }
 </form>
 
 <div>Form contents: {{ cardForm.value | json }}</div>

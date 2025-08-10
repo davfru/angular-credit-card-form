@@ -13,4 +13,8 @@ export class CardForm {
   cardForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
+
+  constructor() {
+    console.log(this.cardForm.get('name'))
+  }
 }
