@@ -1,0 +1,30 @@
+<input [formControl]="control" />
+<ng-container>
+    @if (control.touched &&
+    control.dirty &&
+    control.errors) {
+    @if (control.errors['required']) {
+    <div>
+        Values is required.
+    </div>
+    }
+
+    @if (control.errors['minlength']) {
+    <div>
+        Values must be longer
+    </div>
+    }
+
+    @if (control.errors['maxlength']) {
+    <div>
+        Values must be shorter
+    </div>
+    }
+
+    @if (control.errors['pattern']) {
+    <div>
+        Invalid format
+    </div>
+    }
+    }
+</ng-container>
